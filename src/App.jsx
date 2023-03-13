@@ -1,8 +1,21 @@
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Navbar from "./components/Navbar"
+import Contact from "./pages/Contact"
+import Home from "./pages/Home"
+import Menu from "./pages/Menu"
+import NotFound from "./pages/NotFound"
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-500 text-center">
-     React Projects!
-  </h1>
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/menu" element={<Menu/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="*" element={<NotFound/>}></Route>
+      </Routes>
+    </Router>
   )
 }
 
