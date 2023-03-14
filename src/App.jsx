@@ -1,9 +1,13 @@
+import { Provider } from "react-redux";
+import Counter from "./components/Counter";
+import {store} from "./store";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-500 text-center">
-     React Projects!
-  </h1>
-  )
+    <Provider store={store}>
+      <Counter />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
