@@ -1,9 +1,13 @@
+import Home from "./Home";
+import Navbar from "./Navbar";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-500 text-center">
-     React Projects!
-  </h1>
-  )
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;

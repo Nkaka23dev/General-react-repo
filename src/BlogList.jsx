@@ -1,0 +1,33 @@
+import React from "react";
+
+export default function BlogList({ blogs, title, handleDelete }) {
+  return (
+    <section className="py-24">
+      <div className="max-w-5xl mx-auto pt-4 px-3 space-y-3">
+        <h1 className="text-gray-600  text-2xl font-bold">{title}</h1>
+        {blogs.map((data, idx) => {
+          return (
+            <div
+              key={idx}
+              className="hover:shadow-2xl max-w-lg cursor-pointer py-2 px-4"
+            >
+              <h1 className="text-red-600  text-2xl">{data.title}</h1>
+              <h2 className="text-gray-700 text-lg">
+                Written By:
+                <span className="font-semibold text-gray-800">
+                  {data.author}
+                </span>
+              </h2>
+              <button
+                onClick={() => handleDelete(data.id)}
+                className="p-1 mt-3 rounded-xl px-3 text-white bg-red-400 hover:bg-red-500"
+              >
+                Delete A blog
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
