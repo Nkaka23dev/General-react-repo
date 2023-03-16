@@ -1,39 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 export default function Home() {
-  const data = [
-    {
-      title: "First Title is here",
-      body: "Content of the blog will be here",
-      author: "Eric Nkaka",
-      id: 1,
-    },
-    {
-      title: "Blog is created",
-      body: "Lorem ipsum dolor, sit amet .",
-      author: "Eric Nkaka",
-      id: 2,
-    },
-    {
-      title: "Second Title Here",
-      body: "Content of the blog will be here",
-      author: "James Kizera",
-      id: 3,
-    },
-  ];
-  const [blogs, setBlogs] = useState(data);
+const {data:blogs, error, isLoading} = useFetch("http://localhost:8000/blogs");
+
   const handleDelete = (id) => {
     const newBlog = blogs.filter((value) => value.id !== id);
     setBlogs(newBlog);
   };
   return (
-    <section>
+    <section className="grid">
       <BlogList blogs={blogs} handleDelete={handleDelete} title="All Blogs" />
-      {/* <BlogList
-        blogs={blogs.filter((value) => value.author === "Eric Nkaka")}
-        title="Eric Nksaka's Blogs"
-      /> */}
+      {isLoading && (
+        <h1 className="text-2xl text-center m-auto">Loading........</h1>
+      )}
+       {error && (
+        <h1 className="text-2xl text-center m-auto text-red-500">{error}</h1>
+      )}
     </section>
   );
 }

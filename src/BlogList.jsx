@@ -13,8 +13,8 @@ export default function BlogList({ blogs, title, handleDelete }) {
             >
               <h1 className="text-red-600  text-2xl">{data.title}</h1>
               <h2 className="text-gray-700 text-lg">
-                Written By:
-                <span className="font-semibold text-gray-800">
+                Written By: 
+                <span className="font-semibold px-3 text-gray-800">
                   {data.author}
                 </span>
               </h2>
