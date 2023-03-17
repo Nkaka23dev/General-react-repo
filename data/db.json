@@ -7,10 +7,10 @@
       "id": 1
     },
     {
-      "title": "Dancing is my Hobbies",
-      "body": "i.r, sit amet consectetur adipisicing elit. Accusamus quae neque vero quaerat odio harum reiciendis, perferendis iure fugit sint sed. Expedita exercitationem, dicta ut est cum quo ratione saepe optio labore voluptas impedit! Dolore quae laborum amet beatae magni..r, sit amet consectetur adipisicing elit. Accusamus quae neque vero quaerat odio harum reiciendis, perferendis iure fugit sint sed. Expedita exercitationem, dicta ut est cum quo ratione saepe optio labore voluptas impedit! Dolore quae laborum amet beatae magni..r, sit amet consectetur adipisicing elit. Accusamus quae neque vero quaerat odio harum reiciendis, perferendis iure fugit sint sed. Expedita exercitationem, dicta ut est cum quo ratione saepe optio labore voluptas impedit! Dolore quae laborum amet beatae magni..r, sit amet consectetur adipisicing elit. Accusamus quae neque vero quaerat odio harum reiciendis, perferendis iure fugit sint sed. Expedita exercitationem, dicta ut est cum quo ratione saepe optio labore voluptas impedit! Dolore quae laborum amet beatae magni.",
+      "title": "New New ",
+      "body": "(taskToDe1ete) {\nconst deleteTask =\nconst newTask = tasks. filter( (task) => task. id taskToDe1ete);\nset Tasks (newTask) ;\nlocalStorage. setltem( \"tasks\", JSON . stringify(newTask));\nconst editTask = (taskToedit) => {\n— tasks\nconst editedTasks —\ntask. id === taskToedit.id ? {\n... task,\nset Tasks(editedTasks) ;\nname :\ntaskToedit. name }\n: task\nIocaIStorage. setltem( \"tasks\", JSON . stringify(editedTasks) ) ;\nconst changeCheckedTask = (Task Totasks) {\nconst { id } — TaskTotasks;\nconst checkedTask = tasks\n— id ? {\ntask. id ———\n.task,\nset Tasks( checked Task) ;\nlocalStorage. setltem( \"tasks \" ,\n. true }\ncheckedTask •\n: task\nJSON . stringify(checkedTask) ) ;",
       "author": "Eric Nkaka",
-      "id": 2
+      "id": 3
     }
   ]
 }
