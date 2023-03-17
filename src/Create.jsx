@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Wrapper from "./Wrapper";
 
 export default function Create() {
@@ -7,6 +8,7 @@ export default function Create() {
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Eric Nkaka");
   const [isLoading, setIsloading] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,10 +19,8 @@ export default function Create() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(message),
     }).then(() => {
-      console.log("new Content Added");
-      setAuthor("Eric Nkaka")
-      setTitle("")
-      setBody("")
+      history.push("/");
+      // history.go(-1)
       setIsloading(false);
     });
   };
