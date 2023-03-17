@@ -5,6 +5,8 @@ const useFetch = (url) => {
     const [isLoading, setIsloading] = useState(true);
     const [error, setError] = useState("")
 
+    // const abortCont = new AbortController();
+
     useEffect(() => {
         setTimeout(() => {
             fetch(url)
@@ -24,8 +26,9 @@ const useFetch = (url) => {
                 .catch((err) => {
                     setError(err.message)
                     setIsloading(false)
+
                 });
-        }, 1500);
+        }, 100);
     }, []);
 
     return { data, isLoading, error }

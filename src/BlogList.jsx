@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function BlogList({ blogs, title, handleDelete }) {
   return (
-    <section className="py-24">
+    <section className="py-10">
       <div className="max-w-5xl mx-auto pt-4 px-3 space-y-3">
         <h1 className="text-gray-600  text-2xl font-bold">{title}</h1>
         {blogs.map((data, idx) => {
           return (
+           <Link to={`/blog/${data.id}`}>
             <div
               key={idx}
               className="hover:shadow-2xl max-w-lg cursor-pointer py-2 px-4"
@@ -25,6 +27,7 @@ export default function BlogList({ blogs, title, handleDelete }) {
                 Delete A blog
               </button>
             </div>
+           </Link>
           );
         })}
       </div>
