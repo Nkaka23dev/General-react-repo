@@ -20,12 +20,6 @@ export default function BlogList({ blogs, title, handleDelete }) {
                   {data.author}
                 </span>
               </h2>
-              <button
-                onClick={() => handleDelete(data.id)}
-                className="p-1 mt-3 rounded-xl px-3 text-white bg-red-400 hover:bg-red-500"
-              >
-                Delete A blog
-              </button>
             </div>
            </Link>
           );
