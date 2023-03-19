@@ -1,9 +1,19 @@
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { Provider } from "react-redux";
+import Data from "./components/Data";
+import { productApi } from "./utils/apiSlice";
+import { store } from "./utils/store";
+
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-500 text-center">
-     React Projects!
-  </h1>
-  )
+    <Provider store={store}>
+      <ApiProvider api={productApi}>
+      <div>
+        <Data />
+      </div>
+      </ApiProvider>
+    </Provider>
+  );
 }
 
-export default App
+export default App;
