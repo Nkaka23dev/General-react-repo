@@ -1,9 +1,31 @@
-function App() {
-  return (
-    <h1 className="text-3xl font-bold underline text-red-500 text-center">
-     React Projects!
-  </h1>
-  )
-}
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import RoutesLayout from "./layout/RoutesLayout";
+import HelperLayout from "./layout/HelperLayout";
+import Contact from "./pages/Contact";
+import Faq from "./pages/Faq";
 
-export default App
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RoutesLayout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="help" element={<HelperLayout />}>
+        <Route path="faq" element={<Faq/>}/>
+        <Route path="contact" element={<Contact/>} />
+      </Route>
+    </Route>
+  )
+);
+
+function App() {
+  return <RouterProvider router={router} />;
+  
+}
+export default App;
