@@ -9,6 +9,7 @@ export default function Navbar() {
         <div className="flex items-center gap-10 text-2xl">
           <NavLink to="/" >Home</NavLink>
           <NavLink to="/about">About</NavLink>
+          <NavLink to="/careers">Career</NavLink>
           <NavLink to="/help">Help</NavLink>
         </div>
       </div>

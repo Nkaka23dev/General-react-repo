@@ -3,7 +3,7 @@ import React from 'react'
 export default function About() {
   return (
     <section className="max-w-7xl mx-auto space-y-5 text-lg">
-    <h1 className="text-4xl font-semibold text-yellow-600  my-10">About page</h1>
+    <h1 className="text-4xl font-semibold text-yellow-600 font-semi  my-10">About page</h1>
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsam
       ipsum voluptatibus, fugiat maiores facere officiis non, excepturi soluta
