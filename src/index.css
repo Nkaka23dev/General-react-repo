@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-gray-100;
+}
+.bodyDrk {
+    @apply bg-[#38004c];
+}
+
+.cardDark {
+    @apply bg-[#470c5d];
+}
+
+.buttonDark {
+    @apply bg-[#bd39ed] hover:bg-[#9f28ca];
+}
+
+.ParDark {
+    @apply text-white;
+}
