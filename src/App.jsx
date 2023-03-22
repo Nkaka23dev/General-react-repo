@@ -9,6 +9,7 @@ import HelperLayout from "./layout/HelperLayout";
 import PageLayout from "./layout/pageLayout";
 import About from "./pages/About";
 import Careers, { careersLoad } from "./pages/careers/Careers";
+import CareersDetails, { careerDetailsLoader } from "./pages/careers/CareersDetails";
 import Contact from "./pages/Contact";
 import FAQs from "./pages/FAQs";
 import Home from "./pages/Home";
@@ -24,7 +25,8 @@ const router = createBrowserRouter(
         <Route path="faq" element={<FAQs />} />
       </Route>
       <Route path="careers" element={<CareersLayout />}>
-        <Route index loader={careersLoad} element={<Careers/>} />
+        <Route index loader={careersLoad} element={<Careers />} />
+        <Route loader={careerDetailsLoader} path=":id" element={<CareersDetails />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Route>
