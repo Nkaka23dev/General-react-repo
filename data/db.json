@@ -1,0 +1,40 @@
+{
+  "careers": [
+    {
+      "id": 1,
+      "title": "Senior React Developer",
+      "salary": 40000,
+      "location": "Kigali, Rwanda"
+    },
+    {
+      "id": 2,
+      "title": "Angular Develoepr",
+      "salary": 50000,
+      "location": "Kigali, Rwanda"
+    },
+    {
+      "id": 3,
+      "title": "Python Dev",
+      "salary": 80000,
+      "location": "Nigeria, Legos"
+    },
+    {
+      "id": 4,
+      "title": "Machine Learning Engineer",
+      "salary": 100000,
+      "location": "Ethiopia, Adis abeba"
+    },
+    {
+      "id": 5,
+      "title": "Devops Engineer",
+      "salary": 3000,
+      "location": "Burundi, Bujumbura"
+    },
+    {
+      "id": 6,
+      "title": "Robotics, Engineer",
+      "salary": 220000,
+      "location": "Kigali, Rwanda"
+    }
+  ]
+}
