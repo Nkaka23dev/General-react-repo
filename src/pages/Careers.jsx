@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Careers() {
   const careers = useLoaderData();
@@ -11,13 +12,15 @@ export default function Careers() {
         <div className="mt-10 space-y-3 text-xl ">
           {careers?.map((val, idx) => {
             return (
-              <div
-                key={idx}
-                className="p-3 shadow-xl max-w-md hover:shadow-2xl cursor-pointer "
-              >
-                <h1 className="text-2xl text-gray-600">{val.title}</h1>
-                <h1 className="text-red-500">{val.location}</h1>
-              </div>
+              <Link key={idx} to={val.id.toString()}>
+                <div
+                  
+                  className="p-3 shadow-xl max-w-md hover:shadow-2xl cursor-pointer "
+                >
+                  <h1 className="text-2xl text-gray-600">{val.title}</h1>
+                  <h1 className="text-red-500">{val.location}</h1>
+                </div>
+              </Link>
             );
           })}
         </div>

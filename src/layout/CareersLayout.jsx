@@ -6,7 +6,6 @@ export default function CareersLayout() {
   return (
     <>
       <div>
-       
       </div>
       <div>
         <Outlet />
