@@ -13,10 +13,7 @@ export default function Careers() {
           {careers?.map((val, idx) => {
             return (
               <Link key={idx} to={val.id.toString()}>
-                <div
-                  
-                  className="p-3 shadow-xl max-w-md hover:shadow-2xl cursor-pointer "
-                >
+                <div className="p-3 shadow-xl max-w-md hover:shadow-2xl cursor-pointer ">
                   <h1 className="text-2xl text-gray-600">{val.title}</h1>
                   <h1 className="text-red-500">{val.location}</h1>
                 </div>
@@ -30,6 +27,9 @@ export default function Careers() {
 }
 
 export const CareerLoader = async () => {
-  const res = fetch("http://localhost:3000/careers");
-  return (await res).json();
+  const res = await fetch("http://localhost:3000/careers");
+  if (!res.ok) {
+    throw Error("Couldn't fetch careers, Error occured!");
+  }
+  return res.json();
 };

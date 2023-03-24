@@ -3,7 +3,6 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 export default function CareersDetails() {
   const career = useLoaderData();
-  console.log(career);
   return (
     <div className="max-w-6xl mx-auto">
       <div className="py-4 text-xl space-y-2 cursor-pointer shadow-md mt-5 hover:shadow-2xl px-6 max-w-4xl ">
@@ -36,5 +35,8 @@ export default function CareersDetails() {
 export const getCareerDetailsData = async ({ params }) => {
   const { id } = params;
   const result = await fetch(" http://localhost:3000/careers/" + id);
+  if (!result.ok) {
+    throw Error("Could Not find that career.");
+  }
   return result.json();
 };
