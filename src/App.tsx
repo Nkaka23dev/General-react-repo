@@ -1,13 +1,8 @@
-import Person, { COUNTRY } from './components/Person'
+import Calculator from "./components/Calculator"
 
 function App() {
   return (
-    <Person
-      name='Eric Nkaka'
-      email='nkakaeric96@gmail.com'
-      isMarried={false}
-      friends={["Isheja", "Eric", "Will Shyka", "Yvette Manzi"]}
-      country={COUNTRY.RWANDA} />
+    <Calculator/>
   )
 }
 
