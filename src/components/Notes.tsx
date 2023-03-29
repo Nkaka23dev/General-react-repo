@@ -17,18 +17,42 @@ export default function Notes({ notes, setNNotes, handleClick }: any) {
         }
     }, [valueToEdit])
 
+    useEffect(() => {
+        localStorage.setItem("notes", JSON.stringify(notes))
+    }, [notes])
+
     const onAddNote = () => {
         if (title && body) {
-            const note = {
-                id: nanoid(),
-                title: title,
-                body: body,
-                lastModified: Date.now()
+            if (!valueToEdit.title || !valueToEdit.body) {
+                const note = {
+                    id: nanoid(),
+                    title: title,
+                    body: body,
+                    lastModified: Date.now()
+                }
+                setNNotes([...notes, note])
+                console.log(notes)
+                setSuccessMessage("Note added successfully.")
+                setBody("")
+                setTitle("")
+
+            } else {
+                console.log("data", notes)
+                console.log("value to edit", valueToEdit)
+                const editedNotes = notes.map((note: any) => valueToEdit.id === note.id ? {
+                    ...note, title: title,
+                    body: body,
+                    lastModified: Date.now()
+                } : note)
+                setNNotes(editedNotes)
+                setSuccessMessage("Note Edited.")
+                localStorage.setItem("notes", JSON.stringify(editedNotes))
+                setBody("")
+                setTitle("")
+                valueToEdit.title = ""
+                valueToEdit.body = ""
             }
-            setNNotes([...notes, note])
-            setSuccessMessage("Note added successfully.")
-            setBody("")
-            setTitle("")
+
         }
         else {
             setError("You can not submit an empty form!");
@@ -39,16 +63,17 @@ export default function Notes({ notes, setNNotes, handleClick }: any) {
             setError("")
         }
     }
+    // console.log(notes)
     useEffect(() => {
         setTimeout(() => {
             if (error) {
                 setError("")
             }
-        }, 2000);
+            if (title === "" || body === "") {
+                setSuccessMessage("")
+            }
+        }, 1000);
     })
-
-    console.log(valueToEdit)
-
     return (
         <section>
             <div className='max-w-[95rem] mx-auto px-3 grid grid-cols-3'>
@@ -56,7 +81,8 @@ export default function Notes({ notes, setNNotes, handleClick }: any) {
                 <SiderBar notes={notes}
                     onAddNote={onAddNote}
                     setValueToEdit={setValueToEdit}
-                    handleClick={handleClick} />
+                    handleClick={handleClick}
+                    valueToEdit={valueToEdit} />
                 {/* seconfd div */}
                 <div className='col-span-2'>
                     {error && <div className='bg-red-400 flex justify-between m-10 py-4 text-xl text-white px-10'>
