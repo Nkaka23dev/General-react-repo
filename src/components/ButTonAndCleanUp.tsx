@@ -3,6 +3,7 @@ import UseEffectAndMouseMove from "./useEffectAndMouseMove";
 
 export default function ButTonAndCleanUp() {
     const [show, setShow] = useState(true);
+    
     const handleClick = () => {
         setShow(!show)
     }
