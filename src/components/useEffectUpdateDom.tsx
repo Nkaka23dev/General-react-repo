@@ -7,7 +7,8 @@ export default function UseEffectUpdateDom() {
     useEffect(() => {
         console.log("User Effect is running now....")
         document.title = `${count} times clicked`
-    }, [count])
+    }, [count]);
+    
     const handleClick = () => {
         setCount(prev => prev + 1)
     }
