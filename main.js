@@ -1,24 +1,19 @@
+const render = () => {
+    const element = `<div>
+    <h2>DOM input is place here:</h2>
+    <input type="text" placeholder="Enter....." >
+    DATE:${new Date().toLocaleTimeString()}
+    </div>`
 
-/** Below are code tha showhow react was supposed to be written without jsx, but it is very tidous
-  job, that is why react brough JSX(javascript xML it help us to write html in React)
- * ***/
-// const element = React.createElement('div', {}, 'Hello World, How is it going',
-//     React.createElement("h1", { className: 'header' }, "I am Eric Nkaka"));
+    document.getElementById("app").innerHTML = element;
 
-const channelName = "Youtube channel";
+    const element2 = React.createElement('div', {},
+        React.createElement('h2', { className: "label" }, "Virtual DOM related:"),
+        React.createElement('input', { type: 'text', placeholder: "Enter.." },),
+        React.createElement("div", null, new Date().toLocaleTimeString())
+    )
 
-const getChannelName = () => {
-    return channelName === "Youtube channel" ? "Youtube channel" : "Channel not found!"
+    ReactDOM.render(element2, document.getElementById('app1'));
 }
 
-const element = <div>
-    <h1>Hello World - {getChannelName()}</h1>
-    <h2>My name is Eric Nkaka</h2>
-</div>
-
-//the JSX code above is compiled into React.createElement(.....) by babel compile
-
-
-ReactDOM.render(element, document.getElementById("app"));
-
-console.log(element);
+setInterval(render, 1000);
