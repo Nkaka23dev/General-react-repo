@@ -1,13 +1,18 @@
-import Person, { COUNTRY } from './components/Person'
+import Content from "./components/Content"
+import Header from "./components/Header"
 
 function App() {
   return (
-    <Person
-      name='Eric Nkaka'
-      email='nkakaeric96@gmail.com'
-      isMarried={false}
-      friends={["Isheja", "Eric", "Will Shyka", "Yvette Manzi"]}
-      country={COUNTRY.RWANDA} />
+    <>
+      <Header title="My title is here" cls="uppercase">
+        <div className="flex gap-10 items-center text-lg">
+          <h1>Home</h1>
+          <h1>About</h1>
+          <h1>Contact</h1>
+        </div>
+      </Header>
+      <Content />
+    </>
   )
 }
 
